@@ -6,7 +6,7 @@ const Navbar = (props) => {
     return (
     <div className='navbar'>
         <h1>Watchlist</h1>
-        <p>There are {movies.length} movies you should watch!</p>
+        <p>There are {movies.length} movies/series you should watch!</p>
     </div>);
 }
  

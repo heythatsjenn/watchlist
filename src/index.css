@@ -13,6 +13,7 @@ body {
   width: 90%;
   max-width: 700px;
   color: #eee;
+  overflow: auto;
 }
 .navbar{
   padding: 10px 20px;
@@ -21,4 +22,40 @@ body {
 }
 .navbar h1{
   margin: 10px 0;
+}
+
+
+.movie-list{
+  margin: 20px;
+}
+.movie-list ul{
+  padding: 0;
+  list-style-type: none;
+}
+.movie-list li{
+  background: #6d3d6d;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.movie-list li:hover{
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+.movie-list p{
+  margin:0;
+}
+.movie-list .title{
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2em;
+}
+.movie-list .genre, .movie-list .year{
+  font-size: 0.9em;
+  color: #ddd;
+}
+.empty{
+  margin: 20px;
+  text-align: center;
 }
