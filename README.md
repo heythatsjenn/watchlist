@@ -7,6 +7,12 @@ CRUD em React para cadastro de filmes a assistir. Baseado no projeto do curso de
 * HTML
 * CSS
 
+## Funcionalidades
+* Adicionar, Editar e Remover filmes
+* Visualizar filmes já adicionados
+* Manter os dados, mesmo após ter fechado a página.
+
+
 ## Como Acessar o Projeto
 
 Pelo link https://the-watchlist.vercel.com
