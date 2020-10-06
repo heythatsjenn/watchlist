@@ -14,7 +14,7 @@ const MovieList = () => {
                 }
             </ul>
         </div>
-     ):(<p className='empty'>Are you sure you don't want to watch anything? :C</p>)
+     ):(<p className='empty'>You didn't add any movies yet. To begin, add a movie below.</p>)
 }
  
 export default MovieList;

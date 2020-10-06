@@ -1,19 +1,20 @@
-import React , {createContext, useState, useReducer} from 'react';
+import React , {createContext, useState, useEffect, useReducer} from 'react';
 import MovieReducer from '../reducers/MovieReducer'
 
 export const MovieContext = createContext();
 
 const MovieContextProvider = (props) => {
-    const[movies, dispatch] = useReducer(MovieReducer, [
-        {title: 'Clueless', year: 1995, genre: 'Romance', key:'1'},
-        {title: 'Ant-Man', year: 2015, genre: 'Action', key:'2'},
-        {title: 'Fresh Prince of Bel Air', year: 1990, genre: 'Comedy', key:'3'},
-        {title: 'The Breakfast Club', year: 1985, genre:'Teen', key:'4'}])
+    const[movies, dispatch] = useReducer(MovieReducer, [], ()=>{
+        const localMovies = localStorage.getItem('movies');
+        return localMovies ? JSON.parse(localMovies) : []
+    })
 
-    const [ligado, setligado] = useState(true)
+    useEffect(()=>{
+        localStorage.setItem('movies', JSON.stringify(movies))
+    },[movies])
 
     return ( 
-        <MovieContext.Provider value={{movies, dispatch, ligado, setligado}}>
+        <MovieContext.Provider value={{movies, dispatch}}>
             {props.children}
         </MovieContext.Provider>
      );
