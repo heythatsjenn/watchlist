@@ -33,16 +33,14 @@ body {
   list-style-type: none;
 }
 .movie-list li{
+  position: relative;
   background: #6d3d6d;
   border-radius: 4px;
   padding: 10px;
   cursor: pointer;
   margin: 10px 0;
 }
-.movie-list li:hover{
-  opacity: 0.7;
-  text-decoration: line-through;
-}
+
 .movie-list p{
   margin:0;
 }
@@ -72,14 +70,24 @@ input[type='text'], input[type='number']{
   color: #fff;
   border: 0;
 }
-.submit{
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.75);
+button{
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
   cursor: pointer;
   border-radius: 2px;
-  margin: 10px auto;
+  margin: 10px 10px;
   background: #755175;
   color: #ddd;
   border: 0;
   padding: 6px 20px;
-  display: block;
+}
+
+.movie{
+  position: relative;
+}
+
+.movie-controls{
+  position:absolute;
+  right: 0; 
+   top: 50%;
+   transform: translate(0%,-50%);
 }

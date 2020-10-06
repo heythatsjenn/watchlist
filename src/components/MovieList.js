@@ -4,7 +4,7 @@ import MovieDetails from './MovieDetails'
 
 const MovieList = () => {
 
-    const {movies} = useContext(MovieContext)
+    const {movies} = useContext(MovieContext);
 
     return movies.length? ( 
         <div className='movie-list'>

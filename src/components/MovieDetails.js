@@ -1,13 +1,30 @@
-import React, {useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import {MovieContext} from '../contexts/MovieContext';
+import EditMovieForm from './EditMovieForm';
 
 const MovieDetails = ({movie}) => {
-    const {removeMovie} = useContext(MovieContext);
+    const [isEditing, setIsEditing] = useState(false);
+
+    const {dispatch} = useContext(MovieContext);
     return ( 
         <li>
-            <p onClick={removeMovie.bind(this, movie.key)} className='title'>{movie.title}</p>
-            <p onClick={() =>removeMovie(movie.key)} className='genre'>{movie.genre}</p>
-            <p onClick={() =>removeMovie(movie.key)} className='year'>{movie.year}</p>
+            <div className='movie'>
+                <div className='movie-info'>
+                    <p className='title'>{movie.title}</p>
+                    <p className='genre'>{movie.genre}</p>
+                    <p className='year'>{movie.year}</p>
+                </div>
+                <div className='movie-controls'>
+                    <button onClick={dispatch.bind(this, {type: 'REMOVE_MOVIE', key: movie.key})}>Delete</button>
+                    <button onClick={()=>setIsEditing(!isEditing)}>Edit</button>
+                </div>
+            </div>
+            <div>
+                {
+                    
+                    isEditing?<EditMovieForm movie={movie} isEditing={isEditing} setIsEditing={setIsEditing}/>:''
+                }
+            </div>
         </li>
      );
     }
