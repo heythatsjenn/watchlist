@@ -2,10 +2,10 @@ CRUD em React para cadastro de filmes a assistir. Baseado no projeto do curso de
 
 ## Tecnologias Utilizadas
 
-React: Hooks(useState, useReducer, useEffect, useContext)
-Context API
-HTML
-CSS
+* React: Hooks(useState, useReducer, useEffect, useContext)
+* Context API
+* HTML
+* CSS
 
 ## Como Acessar o Projeto
 
